@@ -7,7 +7,7 @@ const app = express();
 const server = http.createServer(app);
 
 // serve static files from the "public" directory
-app.use(express.static('website'));
+app.use(express.static('/website'));
 
 // serve static files from the "static" directory
 app.use(express.static(path.join(__dirname, 'static')));
