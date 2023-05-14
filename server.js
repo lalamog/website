@@ -1,12 +1,16 @@
 const express = require('express');
 const http = require('http');
 const fs = require('fs');
+const path = require('path'); // add this line
 
 const app = express();
 const server = http.createServer(app);
 
 // serve static files from the "public" directory
 app.use(express.static('public'));
+
+// serve static files from the "static" directory
+app.use(express.static(path.join(__dirname, 'static')));
 
 // handle 404 errors by serving the index.html file
 app.use((req, res) => {
@@ -27,4 +31,3 @@ app.use((req, res) => {
 server.listen(3000, () => {
   console.log('Server is listening on port 3000');
 });
-
