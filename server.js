@@ -10,7 +10,7 @@ const server = http.createServer(app);
 app.use(express.static('/website'));
 
 // serve static files from the "static" directory
-app.use(express.static(path.join(__dirname, 'static')));
+app.use(express.static(path.join(__dirname, '/index.html')));
 
 // handle 404 errors by serving the index.html file
 app.use((req, res) => {
