@@ -10,7 +10,7 @@ app.use(express.static('public'));
 
 // handle 404 errors by serving the index.html file
 app.use((req, res) => {
-  fs.readFile('C:/Users/sherw/OneDrive/Desktop/index.html', (err, data) => {
+  fs.readFile('index.html', (err, data) => {
     if (err) {
       // if there is an error, send a 404 error response
       res.status(404).send("404 Not Found");
